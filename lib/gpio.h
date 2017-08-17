@@ -24,12 +24,12 @@
 #define HIGH 1
 
 
-#ifdef PLATFORM_ALLWINNER_A20
+#ifdef CPU_ALLWINNER_A20
 #define PUD_OFF 0
 #define PUD_DOWN 2
 #define PUD_UP 1
 #else
-#ifdef PLATFORM_ALLWINNER_H3
+#ifdef CPU_ALLWINNER_H3
 #define PUD_OFF 0
 #define PUD_DOWN 2
 #define PUD_UP 1

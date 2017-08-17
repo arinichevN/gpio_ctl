@@ -5,10 +5,10 @@
 #define MAP_MASK (MAP_SIZE - 1)
 #define BLOCK_SIZE  (4*1024)
 
-#ifdef PIN_BOARD1
+#ifdef PINOUT1
 #define PIN_NUM  27
 #else
-#ifdef PIN_BOARD2
+#ifdef PINOUT2
 #define PIN_NUM  41
 #else
 #define PIN_NUM  1
@@ -31,7 +31,7 @@ int data_offset [PIN_NUM];
 int cfg_offset [PIN_NUM];
 int pull_offset [PIN_NUM];
 
-#ifdef PIN_BOARD1
+#ifdef PINOUT1
 //e.g. Orange Pi Zero
 int physToGpio[PIN_NUM] = {
     -1, // 0
@@ -50,7 +50,7 @@ int physToGpio[PIN_NUM] = {
     -1, 10 //25, 26
 };
 #else
-#ifdef PIN_BOARD2
+#ifdef PINOUT2
 int physToGpio[PIN_NUM] = {
     -1, // 0
     -1, -1, // 1, 2
