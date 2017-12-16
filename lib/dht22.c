@@ -66,8 +66,8 @@ int dht22_read(int pin, float *t, float *h) {
     //dealing with response from chip
     int j = 0; //bit counter
     uint8_t data[5] = {0, 0, 0, 0, 0};
-    for (i = 0; i < MAXTIMINGS; i++) {
-        if (arr[i] > MAX_VAL) {//too long signal found
+    for (i = 0; i < DHT22_MAXTIMINGS; i++) {
+        if (arr[i] > DHT22_MAX_VAL) {//too long signal found
             break;
         }
         if (i < 3) {//skip first 3 signals (response signal)
@@ -88,7 +88,7 @@ int dht22_read(int pin, float *t, float *h) {
 
 #ifdef MODE_DEBUG
     printf("dht22_read: data: %.2hhx %.2hhx %.2hhx %.2hhx %.2hhx, j=%d\n", data[0], data[1], data[2], data[3], data[4], j);
-    for (i = 0; i < MAXTIMINGS; i++) {
+    for (i = 0; i < DHT22_MAXTIMINGS; i++) {
         printf("%d ", arr[i]);
     }
     puts("");

@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
     if (mlockall(MCL_CURRENT | MCL_FUTURE) == -1) {
         perror("memory locking failed");
     }
-    setPriorityMax(SCHED_FIFO);
+   // setPriorityMax(SCHED_FIFO);
     if (argc < ARGC_MIN) {
         fprintf(stderr, "%d arguments expected, and got %d\n", ARGC_MIN, argc);
         print_usage(stderr, argv[0]);
